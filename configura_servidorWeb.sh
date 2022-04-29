@@ -50,22 +50,27 @@ echo "Passo 05: descompactar o arquivo zip e copiar para dentro do diretório /v
 apt-get install -y zip
 apt-get install -y unzip
  
-unzip 690e1f604dc8ead2583589e1aee6f8a42040a035.zip -d /var/www/html/
+unzip 690e1f604dc8ead2583589e1aee6f8a42040a035.zip
+cd 873219-690e1f604dc8ead2583589e1aee6f8a42040a035
  
- 
+cp cv-resumido.html /var/www/html/
+cp style.css /var/www/html/ 
+
 echo "Passo 05: finalizado!"
  
 echo "---------------------------"
  
 echo
  
-echo "Passo 06: apagar o arquivo index.html que existe dentro do diretório /var/www/html/ e renomear o arquivo cs-resumido.html para index.html"
+echo "Passo 06: apagar o arquivo index.html que existe dentro do diretório /var/www/html/ e renomear o arquivo cv-resumido.html para index.html"
  
-rm /var/www/html/index.html
+cd /var/www/html/
+
+rm index.html
 echo "Arquivo index.html apagado"
  
-mv /var/www/html/cs-resumido.html /var/www/html/index.html
-echo "Arquivo cs-resumido.html renomeado para index.html"
+mv cv-resumido.html index.html
+echo "Arquivo cv-resumido.html renomeado para index.html"
  
 echo "Passo 06: finalizado!"
  
@@ -75,4 +80,3 @@ echo
  
 echo "Passo 07: inicar o servidor web Apache"
 /etc/init.d/apache2 start
- 
