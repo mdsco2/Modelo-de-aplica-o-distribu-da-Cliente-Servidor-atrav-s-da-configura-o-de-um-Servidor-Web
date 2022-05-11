@@ -5,6 +5,7 @@ echo "Passo 01: atualizar os pacotes"
  
 # Atualizando os pacotes
 apt-get -y update
+apt-get -y upgrade
  
 echo "Passo 01 finalizado!"
  
